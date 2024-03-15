@@ -1,6 +1,3 @@
-import time
-
-
 class Snake:
     """
     Class which is responsible for snake object

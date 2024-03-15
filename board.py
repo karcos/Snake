@@ -19,21 +19,22 @@ class Board:
         :return:
         """
         os.system('cls')
-        print(" ---------- ")
+        board = " ------------------------------\n"
         for row in range(10):
-            print('|', end="")
+            board += '|'
             for col in range(10):
                 if [row, col] in snake_body_tab:
                     if snake_body_tab[0] == [row, col]:
-                        print(snake_head_ascii, end="")
+                        board += f" {snake_head_ascii} "
                     else:
-                        print("#", end="")
+                        board += " # "
                 elif [row, col] == self.__apple:
-                    print("*", end="")
+                    board += " * "
                 else:
-                    print(' ', end="")
-            print('|')
-        print(" ---------- ")
+                    board += "   "
+            board += "|\n"
+        board += " ------------------------------"
+        print(board)
 
     def rand_apple(self, snake_body_tab: list[list[int]]) -> None:
         """

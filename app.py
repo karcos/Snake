@@ -15,7 +15,7 @@ class App:
 
     def run(self) -> None:
         """
-        Main function. Running Snake game.
+        Main method. Running Snake game.
         :return:
         """
         self.__board.rand_apple(self.__snake.body)

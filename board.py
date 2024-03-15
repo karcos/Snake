@@ -4,10 +4,20 @@ import time
 
 
 class Board:
+    """
+    Class which is responsible for showing game board, generating new positions of apple
+    and checking if apple was eaten by a snake
+    """
     def __init__(self) -> None:
         self.__apple = []
 
     def show(self, snake_body_tab: list[list[int]], snake_head_ascii: str) -> None:
+        """
+        Showing game board.
+        :param snake_body_tab: list of snake's parts
+        :param snake_head_ascii: ascii representing head of snake
+        :return: None
+        """
         os.system('cls')
         print(" ---------- ")
         for row in range(10):
@@ -26,6 +36,11 @@ class Board:
         print(" ---------- ")
 
     def rand_apple(self, snake_body_tab: list[list[int]]) -> None:
+        """
+        Randomizing new apple's position.
+        :param snake_body_tab: list of snake's parts
+        :return: None
+        """
         possibilities = []
 
         for row in range(10):
@@ -39,6 +54,11 @@ class Board:
             self.__apple = []
 
     def apple_eaten(self, snake_head_pos: list[int]) -> bool:
+        """
+        Checking if apple was eaten.
+        :param snake_head_pos: Position of snake's head
+        :return: bool
+        """
         if snake_head_pos == self.__apple:
             self.__apple = []
             return True
@@ -46,5 +66,8 @@ class Board:
             return False
 
     @property
-    def apple_pos(self):
+    def apple_pos(self) -> list[int]:
+        """
+        :return: Apple's position
+        """
         return self.__apple

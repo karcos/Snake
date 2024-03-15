@@ -6,17 +6,17 @@ import keyboard
 
 class App:
     """
-    Main class of the Snake game. The 'run()' method, running all game.
+    Main class of the Snake game. The 'run()' method, running game.
     """
     def __init__(self):
         self.__snake = Snake()
         self.__board = Board()
         self.__interval: float = .5
 
-    def run(self):
+    def run(self) -> None:
         """
         Main function. Running Snake game.
-        :return: None.
+        :return:
         """
         self.__board.rand_apple(self.__snake.body)
         while True:
@@ -39,7 +39,7 @@ class App:
     def __get_key(self) -> str:
         """
         Waiting 'interval' seconds to get a pressed button.
-        :return: name of pressed button. Possible ['w', 'a', 's', 'd'].
+        :return: Name of pressed button. Possible ['w', 'a', 's', 'd'].
         """
         button: str = str()
         start_time: time = time.time()
@@ -59,7 +59,7 @@ class App:
     def __lose(self) -> bool:
         """
         Checking if player lose yet.
-        :return: True if player lose and False if player don't lose yet.
+        :return: True if player lose and False if don't.
         """
         snake_head = self.__snake.head_pos
         if snake_head[0] not in range(10) or snake_head[1] not in range(10):
@@ -72,6 +72,6 @@ class App:
     def __win(self):
         """
         Checking if player win yet
-        :return: True if player wins and False if player don't win yet
+        :return: True if player wins and False if don't
         """
         return len(self.__snake.body) == 100

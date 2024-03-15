@@ -16,7 +16,7 @@ class Board:
         Showing game board.
         :param snake_body_tab: list of snake's parts
         :param snake_head_ascii: ascii representing head of snake
-        :return: None
+        :return:
         """
         os.system('cls')
         print(" ---------- ")
@@ -39,7 +39,7 @@ class Board:
         """
         Randomizing new apple's position.
         :param snake_body_tab: list of snake's parts
-        :return: None
+        :return:
         """
         possibilities = []
 
@@ -57,7 +57,7 @@ class Board:
         """
         Checking if apple was eaten.
         :param snake_head_pos: Position of snake's head
-        :return: bool
+        :return: True if apple was eaten and False if wasn't
         """
         if snake_head_pos == self.__apple:
             self.__apple = []
